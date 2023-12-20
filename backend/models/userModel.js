@@ -5,11 +5,6 @@ const validator = require("validator");
 // User schema
 const userSchema = mongoose.Schema(
   {
-    name: {
-      type: "string",
-      required: true,
-      maxlength: 32,
-    },
     email: {
       type: "string",
       required: true,
@@ -24,11 +19,7 @@ const userSchema = mongoose.Schema(
 );
 
 // Reusable validation function
-const validateUserData = (name, email, password) => {
-  if (!validator.isAlpha(name)) {
-    throw new Error("Name can only contain letters");
-  }
-
+const validateUserData = (email, password) => {
   if (!validator.isEmail(email)) {
     throw new Error("Invalid email");
   }
@@ -41,8 +32,8 @@ const validateUserData = (name, email, password) => {
 };
 
 // Sign up user
-userSchema.statics.register = async function (name, email, password) {
-  validateUserData(name, email, password);
+userSchema.statics.register = async function (email, password) {
+  validateUserData(email, password);
 
   try {
     if (await this.findOne({ email })) {
@@ -52,7 +43,6 @@ userSchema.statics.register = async function (name, email, password) {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const user = await this.create({
-      name,
       email,
       password: hashedPassword,
     });
@@ -89,8 +79,8 @@ userSchema.statics.login = async function (email, password) {
 };
 
 // Update user
-userSchema.statics.updateUser = async function (id, name, email, password) {
-  validateUserData(name, email, password);
+userSchema.statics.updateUser = async function (id, email, password) {
+  validateUserData(email, password);
 
   try {
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -98,7 +88,6 @@ userSchema.statics.updateUser = async function (id, name, email, password) {
     const user = await this.findByIdAndUpdate(
       id,
       {
-        name,
         email,
         password: hashedPassword,
       },

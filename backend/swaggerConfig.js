@@ -25,11 +25,6 @@ const options = {
         User: {
           type: "object",
           properties: {
-            name: {
-              type: "string",
-              example: "John",
-              description: "Name of the user",
-            },
             email: {
               type: "string",
               example: "john.doe@email.com",
@@ -37,7 +32,7 @@ const options = {
             },
             password: {
               type: "string",
-              example: "ABCabc123",
+              example: "ABCabc123!",
               description: "Password of the user",
             },
           },

@@ -73,7 +73,7 @@ router.post("/login", userController.loginUser);
  *       200:
  *         description: User successfully updated
  *       401:
- *        description: Not authorized, token failed
+ *         description: Not authorized, token failed
  *       500:
  *         description: Failed to update user
  */
@@ -97,7 +97,7 @@ router.put(
  *       200:
  *         description: User successfully deleted
  *       401:
- *        description: Not authorized, token failed
+ *         description: Not authorized, token failed
  *       500:
  *         description: Failed to delete user
  */
@@ -121,7 +121,7 @@ router.delete(
  *       200:
  *         description: User successfully retrieved
  *       401:
- *        description: Not authorized, token failed
+ *         description: Not authorized, token failed
  *       500:
  *         description: Failed to get user
  */
