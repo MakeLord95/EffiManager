@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 
 // Function to create a token
 function createToken(_id) {
-  return jwt.sign({ _id }, process.env.JWT_SECRET, { expiresIn: "1d" });
+  return jwt.sign({ _id }, process.env.JWT_SECRET, { expiresIn: "1h" });
 }
 
 // Function to handle errors
@@ -76,7 +76,7 @@ const deleteUser = async (req, res) => {
   }
 };
 
-// Get user information
+// Function to get user information
 const getUser = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
@@ -89,7 +89,7 @@ const getUser = async (req, res) => {
   }
 };
 
-// Get all users
+// Temporary function to get all users
 const getAllUsers = async (req, res) => {
   try {
     const users = await User.find();

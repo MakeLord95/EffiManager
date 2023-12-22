@@ -27,16 +27,16 @@ logSchema.statics.createLog = async function (
   ipAddress
 ) {
   try {
-    const log = await this.create({
-      timeStamp,
-      logLevel,
-      message,
-      ipAddress,
-    });
+    // const log = await this.create({
+    //   timeStamp,
+    //   logLevel,
+    //   message,
+    //   ipAddress,
+    // });
 
     console.log(timeStamp, logLevel, message, ipAddress);
 
-    return log;
+    // return log;
   } catch (err) {
     console.log(err);
   }

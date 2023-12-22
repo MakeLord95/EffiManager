@@ -17,7 +17,8 @@ const tokenRefresh = async (req, res, next) => {
         const currentTimestamp = Math.floor(Date.now() / 1000);
         const tokenExpiration = decoded.exp;
 
-        if (tokenExpiration - currentTimestamp < 60 * 60 * 24) {
+        // Check if remaining time is less than 15 minutes (900 seconds)
+        if (tokenExpiration - currentTimestamp < 900) {
           const refreshedToken = generateNewToken(user._id);
           res.setHeader("Authorization", `Bearer ${refreshedToken}`);
         }
