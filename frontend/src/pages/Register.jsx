@@ -1,12 +1,15 @@
 import useField from "../hooks/useField";
+import useRegister from "../hooks/useRegister";
 
 export default function Register() {
+  const { register } = useRegister();
+
   const email = useField("email");
   const password = useField("password");
 
-  const handleRegister = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email.value, password.value);
+    register(email.value, password.value);
   };
 
   return (
@@ -30,7 +33,7 @@ export default function Register() {
 
         <br />
 
-        <button onClick={handleRegister} className="register-button">
+        <button onClick={handleSubmit} className="register-button">
           Register
         </button>
       </form>
