@@ -17,7 +17,7 @@ export default function BNavbar({ isAuthenticated, setIsAuthenticated }) {
         <Navbar.Brand as={Link} to="/">
           <img
             className="logo"
-            alt="Stack"
+            alt="EffiManager"
             width="50px"
             height="50px"
             src="https://placehold.co/50"

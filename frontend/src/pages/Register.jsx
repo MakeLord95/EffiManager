@@ -1,3 +1,4 @@
+import "../components/styles/Register.css";
 import useField from "../hooks/useField";
 import useRegister from "../hooks/useRegister";
 
@@ -13,7 +14,7 @@ export default function Register() {
   };
 
   return (
-    <div>
+    <div className="register-page">
       <form className="register-form">
         <h2 className="register-title">Register</h2>
 

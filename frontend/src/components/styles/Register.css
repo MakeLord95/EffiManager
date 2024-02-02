@@ -1,0 +1,60 @@
+.register-page {
+  background: url("../../images/heroPhoto.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.register-form {
+  background-color: rgba(35, 131, 115, 0.712);
+  padding: 2rem;
+  width: fit-content;
+  max-width: 35rem;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+.register-title {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.email-label {
+  display: block;
+  text-align: left;
+  margin-bottom: 0.25rem;
+}
+
+.email-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #000;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.password-label {
+  display: block;
+  text-align: left;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.password-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #000;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.register-button {
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #2b695f;
+  color: white;
+  margin-bottom: 1rem;
+}
