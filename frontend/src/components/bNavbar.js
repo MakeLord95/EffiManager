@@ -28,13 +28,37 @@ export default function BNavbar({ isAuthenticated, setIsAuthenticated }) {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/login">
-              Sign In
-            </Nav.Link>
+            {isAuthenticated && (
+              <>
+                <Nav.Link as={Link} to="/dashboard">
+                  Dashboard
+                </Nav.Link>
 
-            <Nav.Link as={Link} to="/register">
-              Register
-            </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  to="/login"
+                  onClick={() => {
+                    localStorage.removeItem("token");
+                    localStorage.removeItem("email");
+                    setIsAuthenticated(false);
+                  }}
+                >
+                  Logout
+                </Nav.Link>
+              </>
+            )}
+
+            {!isAuthenticated && (
+              <>
+                <Nav.Link as={Link} to="/login">
+                  Sign In
+                </Nav.Link>
+
+                <Nav.Link as={Link} to="/register">
+                  Register
+                </Nav.Link>
+              </>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -11,7 +11,7 @@ function createToken(_id) {
 function handleError(res, statusCode, errorMessage) {
   Log.createLog(Date(), "ERROR", errorMessage, res.req.ip);
 
-  res.status(statusCode).json({ error: errorMessage });
+  res.status(statusCode).json({ message: errorMessage });
 }
 
 // Function to create a new user

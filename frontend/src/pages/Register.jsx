@@ -2,8 +2,8 @@ import "../components/styles/Register.css";
 import useField from "../hooks/useField";
 import useRegister from "../hooks/useRegister";
 
-export default function Register() {
-  const { register } = useRegister();
+export default function Register({ setIsAuthenticated }) {
+  const { register } = useRegister({ setIsAuthenticated });
 
   const email = useField("email");
   const password = useField("password");

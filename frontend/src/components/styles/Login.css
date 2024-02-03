@@ -1,4 +1,4 @@
-.register-page {
+.login-page {
   background: url("../../images/heroPhoto.jpg") center/cover no-repeat;
   display: flex;
   justify-content: center;
@@ -6,7 +6,7 @@
   height: 100vh;
 }
 
-.register-form {
+.login-form {
   background-color: rgba(35, 131, 115, 0.712);
   padding: 20px;
   border-radius: 10px;
@@ -15,7 +15,7 @@
   text-align: center;
 }
 
-.register-title {
+.login-title {
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
@@ -51,7 +51,7 @@
   text-align: center;
 }
 
-.register-button {
+.login-button {
   margin-top: 0.5rem;
   width: 100%;
   padding: 0.5rem;
@@ -61,6 +61,6 @@
   margin-bottom: 1rem;
 }
 
-.register-button:hover {
+.login-button:hover {
   background-color: #1f4c44;
 }

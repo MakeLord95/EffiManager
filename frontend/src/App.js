@@ -25,7 +25,10 @@ export default function App() {
             element={<Home isAuthenticated={isAuthenticated} />}
           />
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route
+            path="/register"
+            element={<Register setIsAuthenticated={setIsAuthenticated} />}
+          />
         </Routes>
       </BrowserRouter>
       <Footer />
