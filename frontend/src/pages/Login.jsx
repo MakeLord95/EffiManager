@@ -1,6 +1,18 @@
 import "../components/styles/Login.css";
+import useField from "../hooks/useField";
+import useLogin from "../hooks/useLogin";
 
 export default function Login() {
+  const { login } = useLogin();
+
+  const email = useField("email");
+  const password = useField("password");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    login(email.value, password.value);
+  };
+
   return (
     <div className="login-page">
       <form className="login-form">
@@ -22,7 +34,9 @@ export default function Login() {
 
         <br />
 
-        <button className="login-button">Login</button>
+        <button onClick={handleSubmit} className="login-button">
+          Login
+        </button>
       </form>
     </div>
   );
